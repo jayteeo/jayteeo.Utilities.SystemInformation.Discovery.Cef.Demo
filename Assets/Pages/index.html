@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script type="text/javascript">
+        (async function () {
+            await CefSharp.BindObjectAsync("SystemDiscoveryService");
+            let systemInfo = await SystemDiscoveryService.execute();
+
+            setElementProperties(systemInfo);
+
+            function setElementProperties(systemInfo) {
+                var systemName = document.getElementById("system-name");
+                systemName.innerHTML = systemInfo.systemName;
+
+                var computerManufacturer = document.getElementById("computer-manufacturer");
+                computerManufacturer.innerHTML = systemInfo.machineManufacturer;
+
+                var operatingSystem = document.getElementById("operating-system");
+                operatingSystem.innerHTML = systemInfo.operatingSystemNameAndVersion;
+            }
+
+        })();
+    </script>
+    <style>
+        /*TODO:*/
+    </style>
+</head>
+<body>
+    <div class="row">
+        <label>System Name:</label>
+        <div id="system-name"></div>
+    </div>
+    <div class="row">
+        <label>Computer Manufacturer:</label>
+        <div id="computer-manufacturer"></div>
+    </div>
+    <div class="row">
+        <label>Operating System:</label>
+        <div id="operating-system"></div>
+    </div>
+</body>
+</html>

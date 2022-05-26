@@ -3,3 +3,7 @@
 ################################################################################
 
 /bin/x86andx64/GPUCache
+/bin/x86andx64/locales
+/bin/x86andx64/swiftshader
+/bin/x86andx64
+/obj/x86andx64
